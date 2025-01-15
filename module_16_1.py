@@ -3,20 +3,17 @@ from fastapi import FastAPI
 app = FastAPI()
 
 @ app.get("/")
-async def welcome():
+async def get_main_page():
     return  {"Главная страница"}
 
 @ app.get("/user/admin")
-async def news():
+async def get_admin_page():
     return  {"Вы вошли, как администратор"}
 
 @ app.get("/user/{user_id}")
-async def read(user_id: int):
+async def get_user_number(user_id: int):
     return  {f"Вы вошли как пользователь №{user_id}"}
 
 @ app.get("/user")
-async def user_paginator(username: str, age: int) -> dict:
+async def get_user_info(username: str, age: int) -> dict:
     return  {"Информация о пользователе. Имя": username, "Возраст": age}
-
-
-
