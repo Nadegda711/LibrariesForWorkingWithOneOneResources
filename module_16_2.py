@@ -20,5 +20,5 @@ async def get_user_number(user_id: int = Path(ge = 0, le = 100, descripton = "En
 @ app.get("/user/{username}/{age}")
 async def get_user_info(username: str = Path(min_length = 5, max_length = 20, descripton = "Enter username", example="UrbanUser"),
                         age: int = Path(ge = 18, le = 120, descripton = "Enter age", example= 20)) -> dict:
-    return  {"Информация о пользователе. Имя": username, "Возраст": age}
+    return  {username: "Информация о пользователе. Имя", age: "Возраст"}
 
