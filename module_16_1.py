@@ -15,5 +15,5 @@ async def get_user_number(user_id: int):
     return  {f"Вы вошли как пользователь №{user_id}"}
 
 @ app.get("/user")
-async def get_user_info(username: str, age: int) -> dict:
-    return  {username: "Информация о пользователе. Имя", age: "Возраст" }
+async def get_user_info(username: str, age: int) :
+    return  {f"Информация о пользователе. Имя: {username} Возраст: {age}"}
